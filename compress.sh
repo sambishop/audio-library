@@ -50,7 +50,7 @@ if [ ! -e "$1" ]; then
 fi
 
 src="$(readlink -v -e "$1")"
-dst="$(readlink -v -e "${1/ripped/compressed}")"
+dst="$(readlink -v -f "${1/ripped/compressed}")"
 
 compress_directory "$src" "$dst"
 
